@@ -10,6 +10,8 @@ public class AddChassiMiddleware
     }
     public async Task Invoke(HttpContext context, LinhaDeMontagemDescricao descricao)
     {
+        var erro = 0;
+        erro = erro / 0;
         context.Response.ContentType = "text/html; charset=utf-8";
         descricao.AdicionarEtapa("Chassi", "Chassi adicionado");
         await _next(context);

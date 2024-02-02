@@ -16,9 +16,10 @@ public class Exercicio3Middleware
         stopwatch.Start();
         await _next(context);
         stopwatch.Stop();
+        var ticks = stopwatch.ElapsedTicks;
         await context.Response.WriteAsync($"Exercicio 3:");
-        await context.Response.WriteAsync($"Tempo_Requisicao_MileSegundos {stopwatch.ElapsedMilliseconds.ToString()}");
-        await context.Response.WriteAsync($"Tempo_Requisicao_MicroSegundos {stopwatch.Elapsed.TotalMilliseconds * 1000}");
+        await context.Response.WriteAsync($"</br>Tempo_Requisicao_MileSegundos {stopwatch.ElapsedMilliseconds.ToString()}");
+        await context.Response.WriteAsync($"</br>Tempo_Requisicao_MicroSegundos {ticks/1000}");
         //context.Response.Headers.Add("Tempo_Requisicao", (stopwatch.Elapsed.TotalMilliseconds * 1000).ToString());
     }
 }

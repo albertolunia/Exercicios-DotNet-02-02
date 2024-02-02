@@ -12,7 +12,7 @@ var app = builder.Build();
 app.UseExercicio3Middleware();
 app.UseExercicio1Middleware();
 app.UseExercicio4Middleware();
-// app.UseAddChassiMiddleware();
+app.UseAddChassiMiddleware();
 // app.UseAddMotorMiddleware();
 // app.UseMiddleware<AddPortasMiddleware>();
 // app.UseMiddleware<AddPinturaMiddleware>();
