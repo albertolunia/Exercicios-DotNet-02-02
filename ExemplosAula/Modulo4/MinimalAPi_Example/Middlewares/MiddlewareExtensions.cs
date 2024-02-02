@@ -29,5 +29,10 @@ namespace Middleware.Extensions
         {
             return app.UseMiddleware<Exercicio3Middleware>();
         }
+
+        public static IApplicationBuilder UseExercicio4Middleware(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<Exercicio4Middleware>();
+        }
     }
 }

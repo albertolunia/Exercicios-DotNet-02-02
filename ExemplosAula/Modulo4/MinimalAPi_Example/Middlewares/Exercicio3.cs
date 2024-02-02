@@ -17,7 +17,7 @@ public class Exercicio3Middleware
         await _next(context);
         stopwatch.Stop();
         await context.Response.WriteAsync($"Exercicio 3:");
-        await context.Response.WriteAsync($"Tempo_Requisicao_Milesegundos {stopwatch.ElapsedMilliseconds.ToString()}");
+        await context.Response.WriteAsync($"Tempo_Requisicao_MileSegundos {stopwatch.ElapsedMilliseconds.ToString()}");
         await context.Response.WriteAsync($"Tempo_Requisicao_MicroSegundos {stopwatch.Elapsed.TotalMilliseconds * 1000}");
         //context.Response.Headers.Add("Tempo_Requisicao", (stopwatch.Elapsed.TotalMilliseconds * 1000).ToString());
     }
