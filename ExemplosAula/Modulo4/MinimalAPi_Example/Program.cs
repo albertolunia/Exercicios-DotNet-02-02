@@ -9,6 +9,7 @@ var app = builder.Build();
 //app.UseHttpsRedirection();
 
 app.UseExercicio2Middleware();
+app.UseExercicio3Middleware();
 app.UseExercicio1Middleware();
 app.UseAddChassiMiddleware();
 app.UseAddMotorMiddleware();

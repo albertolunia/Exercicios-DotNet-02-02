@@ -3,10 +3,10 @@ using System.Diagnostics;
 namespace Modulo4.Exercicios;
 
 //Implementar um middleware que regitra o tempo de duração de cada requisição em milisegundos
-public class Exercicio2Middleware
+public class Exercicio3Middleware
 {
     private readonly RequestDelegate _next;
-    public Exercicio2Middleware(RequestDelegate next)
+    public Exercicio3Middleware(RequestDelegate next)
     {
         _next = next;
     }
@@ -16,7 +16,9 @@ public class Exercicio2Middleware
         stopwatch.Start();
         await _next(context);
         stopwatch.Stop();
+        await context.Response.WriteAsync($"Exercicio 3:");
         await context.Response.WriteAsync($"Tempo_Requisicao_Milesegundos {stopwatch.ElapsedMilliseconds.ToString()}");
-        //context.Response.Headers.Add("Tempo_Requisicao", stopwatch.ElapsedMilliseconds.ToString());
+        await context.Response.WriteAsync($"Tempo_Requisicao_MicroSegundos {stopwatch.Elapsed.TotalMilliseconds * 1000}");
+        //context.Response.Headers.Add("Tempo_Requisicao", (stopwatch.Elapsed.TotalMilliseconds * 1000).ToString());
     }
 }
